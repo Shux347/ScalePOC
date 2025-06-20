@@ -6,8 +6,11 @@ entity Aircraft {
       lastCheck     : Date;
       nextCheck     : Date;
       flightHours   : Integer;
-      status        : MaintenanceStatus;
-      virtual status_criticality : Integer;
+}
+
+// New entity to provide a stable list for the filter
+entity MaintenanceStatuses {
+    key name : MaintenanceStatus;
 }
 
 type MaintenanceStatus : String enum {
