@@ -14,8 +14,7 @@ annotate MaintenanceService.Aircraft with @(
         { Value: flightHours, Label: 'Flight Hours' },
         { 
           Value: status, 
-          Label: 'Status',
-          Criticality: status_criticality
+          Label: 'Status'
         }
     ]
 );

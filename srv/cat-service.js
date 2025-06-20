@@ -8,13 +8,10 @@ module.exports = cds.service.impl(function() {
 
         if (daysUntilCheck < 0) {
             each.status = 'Urgent';
-            each.status_criticality = 3; // Red
         } else if (daysUntilCheck <= 30) {
             each.status = 'Warning';
-            each.status_criticality = 2; // Yellow
         } else {
             each.status = 'OK';
-            each.status_criticality = 1; // Green
         }
     });
 });

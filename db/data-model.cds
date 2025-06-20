@@ -7,7 +7,6 @@ entity Aircraft {
       nextCheck     : Date;
       flightHours   : Integer;
       status        : MaintenanceStatus;
-      virtual status_criticality : Integer;
 }
 
 type MaintenanceStatus : String enum {
