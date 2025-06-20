@@ -1,8 +1,7 @@
 using my.maintenance as my from '../db/data-model';
 
 service MaintenanceService {
-    // Expose the Aircraft entity with calculated fields
-    @readonly
+    // Expose the Aircraft entity with calculated fields and actions
     entity Aircraft as projection on my.Aircraft {
         *,
         // This case statement calculates the status on the fly
@@ -17,6 +16,9 @@ service MaintenanceService {
             when (julianday(nextCheck) - julianday('now')) <= 30 then 2
             else 3
         end as status_criticality : Integer
+    } actions {
+        // Action to record a maintenance check
+        action performMaintenance();
     };
 
     // Expose the separate entity for the filter's value help
@@ -37,6 +39,12 @@ annotate MaintenanceService.Aircraft with @(
               Value: status, 
               Label: 'Status',
               Criticality: status_criticality
+            },
+            // Add a button to trigger the action
+            { 
+                $Type: 'UI.DataFieldForAction', 
+                Label: 'Perform Maintenance', 
+                Action: 'MaintenanceService.performMaintenance'
             }
         ],
         // Add a filter bar for the 'status' field
