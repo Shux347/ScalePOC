@@ -11,10 +11,6 @@ annotate MaintenanceService.Aircraft with @(
         { Value: model, Label: 'Model' },
         { Value: lastCheck, Label: 'Last Check' },
         { Value: nextCheck, Label: 'Next Check' },
-        { Value: flightHours, Label: 'Flight Hours' },
-        { 
-          Value: status, 
-          Label: 'Status'
-        }
+        { Value: flightHours, Label: 'Flight Hours' }
     ]
 );
