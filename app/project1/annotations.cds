@@ -27,12 +27,7 @@ annotate service.Aircraft with @(
                 $Type : 'UI.DataField',
                 Label : 'flightHours',
                 Value : flightHours,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'status',
-                Value : status,
-            },
+            }
         ],
     },
     UI.Facets : [
